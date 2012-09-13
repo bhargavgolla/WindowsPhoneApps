@@ -1,0 +1,6 @@
+<MarketplaceDetails>
+  <SmallAppTile>ApplicationIcon.png</SmallAppTile>
+  <LargeAppTile>Background.png</LargeAppTile>
+  <PCAppTile>marketAppICON.png</PCAppTile>
+  <ScreenShots>home.png;key_in.png;DocView.png;error.png;history.png;share.appbar.png;;;</ScreenShots>
+</MarketplaceDetails>
