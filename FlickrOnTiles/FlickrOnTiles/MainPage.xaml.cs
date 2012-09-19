@@ -142,7 +142,9 @@ namespace FlickrOnTiles
 
                             HubTile hubTile = new HubTile();
                             hubTile.Title = photos[count].Title;
-                            hubTile.Source = new BitmapImage(new Uri(photos[count].ThumbnailUrl));
+                            hubTile.Source = new BitmapImage(new Uri(photos[count].SquareThumbnailUrl));
+                            hubTile.Name = photos[count].WebUrl;
+                            hubTile.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(hubTile_Tap);
                             Flickr flickr = FlickrManager.GetAuthInstance();
                             flickr.PhotosCommentsGetListAsync(photos[count].PhotoId, res => 
                             {
@@ -176,7 +178,7 @@ namespace FlickrOnTiles
                             if (count == photos.Count)
                             {
                                 int newCount = 0;
-                                String imageURL = photos[count-1].ThumbnailUrl;
+                                String imageURL = photos[count-1].SquareThumbnailUrl;
                                 // Application Tile is always the first Tile, even if it is not pinned to Start.
                                 ShellTile TileToFind = ShellTile.ActiveTiles.First();
                                 // Application should always be found
@@ -207,6 +209,14 @@ namespace FlickrOnTiles
                     return;
                 });
             }
+        }
+
+        void hubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            HubTile tapped = (HubTile)sender;
+            //NavigationService.Navigate(new Uri(tapped.Name, UriKind.Absolute));
+            WebBrowserTask task = new WebBrowserTask { Uri= new Uri(tapped.Name)};
+            task.Show();
         }
     }
 }

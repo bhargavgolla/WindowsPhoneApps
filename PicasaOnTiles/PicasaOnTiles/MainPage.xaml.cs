@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
+
+namespace PicasaOnTiles
+{
+    public partial class MainPage : PhoneApplicationPage
+    {
+        // Constructor
+        public MainPage()
+        {
+            InitializeComponent();
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Opacity = 1;
+            ApplicationBar.IsVisible = true;
+            ApplicationBar.IsMenuEnabled = true;
+            /*Mail AppBar*/
+            ApplicationBarIconButton button1 = new ApplicationBarIconButton();
+            if ((Visibility)App.Current.Resources["PhoneDarkThemeVisibility"] == Visibility.Visible)
+            {
+                button1.IconUri = new Uri("/Images/dark/appbar.feature.email.rest.png", UriKind.Relative);
+            }
+            else
+            {
+                button1.IconUri = new Uri("/Images/light/appbar.feature.email.rest.png", UriKind.Relative);
+            }
+            button1.Text = "Mail";
+            ApplicationBar.Buttons.Add(button1);
+            button1.Click += new EventHandler(email_Click);
+
+            /*Facebook Appbar*/
+            ApplicationBarIconButton button2 = new ApplicationBarIconButton();
+            if ((Visibility)App.Current.Resources["PhoneDarkThemeVisibility"] == Visibility.Visible)
+            {
+                button2.IconUri = new Uri("/Images/dark/appbar.share.rest.png", UriKind.Relative);
+            }
+            else
+            {
+                button2.IconUri = new Uri("/Images/light/appbar.share.rest.png", UriKind.Relative);
+            }
+            button2.Text = "Share";
+            ApplicationBar.Buttons.Add(button2);
+            button2.Click += new EventHandler(fb_Click);
+
+            ApplicationBarMenuItem menuItem1 = new ApplicationBarMenuItem();
+            menuItem1.Text = "Share this app with your Friends";
+            ApplicationBar.MenuItems.Add(menuItem1);
+        }
+        private void email_Click(object sender, EventArgs e)
+        {
+            EmailComposeTask task = new EmailComposeTask();
+            task.Subject = "Have you checked this WP App: Picasa-On-Tiles??";
+            task.Body = "Hey check out this great WP App named Picasa-On-Tiles. You can find it on marketplace here, http://www.windowsphone.com/s?appid=d82403d1-dc31-487f-8865-c308f143403f";
+            task.Show();
+        }
+
+        private void fb_Click(object sender, EventArgs e)
+        {
+            ShareLinkTask shareLinkTask = new ShareLinkTask();
+            shareLinkTask.LinkUri = new Uri("http://www.windowsphone.com/s?appid=d82403d1-dc31-487f-8865-c308f143403f", UriKind.Absolute);
+            shareLinkTask.Message = "Have you checked out this WP App: Picasa-On-Tiles??";
+            shareLinkTask.Show();
+        }
+    }
+}

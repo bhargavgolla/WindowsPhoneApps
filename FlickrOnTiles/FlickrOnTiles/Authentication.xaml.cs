@@ -17,7 +17,7 @@ namespace FlickrOnTiles
     public partial class Authentication : PhoneApplicationPage
     {
         // A dummy callback url - as long as this is a valid URL it doesn't matter what it is
-        private const string callbackUrl = "http://localhost/dummy";
+        private const string callbackUrl = "https://sites.google.com/site/oauthauthentication/";
 
         // The request token, held while the authentication is completed.
         private OAuthRequestToken requestToken = null;
