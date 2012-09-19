@@ -67,7 +67,7 @@ namespace FlickrOnTiles
             }
             else
             {
-                button2.IconUri = new Uri("/Images/light/appbar.favs.rest.png", UriKind.Relative);
+                button3.IconUri = new Uri("/Images/light/appbar.favs.rest.png", UriKind.Relative);
             }
             button3.Text = "Rate";
             ApplicationBar.Buttons.Add(button3);
