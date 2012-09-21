@@ -21,55 +21,7 @@ namespace RFCReader_Panaroma
         public MainPage()
         {
             InitializeComponent();
-            ApplicationBar = new ApplicationBar();
-            ApplicationBar.Opacity = 0.4;
-            ApplicationBar.IsVisible = true;
-            ApplicationBar.IsMenuEnabled = true;
-            /*Mail AppBar*/
-            ApplicationBarIconButton button1 = new ApplicationBarIconButton();
-            if ((Visibility)App.Current.Resources["PhoneDarkThemeVisibility"] == Visibility.Visible)
-            {
-                button1.IconUri = new Uri("/Images/dark/appbar.feature.email.rest.png", UriKind.Relative);
-            }
-            else
-            {
-                button1.IconUri = new Uri("/Images/light/appbar.feature.email.rest.png", UriKind.Relative);
-            }
-            button1.Text = "Mail";
-            ApplicationBar.Buttons.Add(button1);
-            button1.Click += new EventHandler(email_Click);
-
-            /*Facebook Appbar*/
-            ApplicationBarIconButton button2 = new ApplicationBarIconButton();
-            if ((Visibility)App.Current.Resources["PhoneDarkThemeVisibility"] == Visibility.Visible)
-            {
-                button2.IconUri = new Uri("/Images/dark/appbar.share.rest.png", UriKind.Relative);
-            }
-            else
-            {
-                button2.IconUri = new Uri("/Images/light/appbar.share.rest.png", UriKind.Relative);
-            }
-            button2.Text = "Share";
-            ApplicationBar.Buttons.Add(button2);
-            button2.Click += new EventHandler(fb_Click);
-
-            /*MarketPlace Icon*/
-            ApplicationBarIconButton button3 = new ApplicationBarIconButton();
-            if ((Visibility)App.Current.Resources["PhoneDarkThemeVisibility"] == Visibility.Visible)
-            {
-                button3.IconUri = new Uri("/Images/dark/appbar.favs.rest.png", UriKind.Relative);
-            }
-            else
-            {
-                button3.IconUri = new Uri("/Images/light/appbar.favs.rest.png", UriKind.Relative);
-            }
-            button3.Text = "Rate";
-            ApplicationBar.Buttons.Add(button3);
-            button3.Click += new EventHandler(market_Click);
-
-            ApplicationBarMenuItem menuItem1 = new ApplicationBarMenuItem();
-            menuItem1.Text = "Share this app with your Friends";
-            ApplicationBar.MenuItems.Add(menuItem1);
+            
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);

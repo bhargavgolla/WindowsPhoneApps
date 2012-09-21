@@ -6,7 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -23,23 +23,36 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="ApplicationTitle" Text="Picasa-On-Tiles" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="photostream" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="PageTitle" Text="Login" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,6,0,0" Name="textBlock1" Text="Sign into Google Account" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,42,0,0" Text="Email:" VerticalAlignment="Top" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="6,64,0,0" x:Name="EmailTextBox" Text="" VerticalAlignment="Top" Width="460" InputScope="EmailSmtpAddress" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,142,0,0" Text="Password:" VerticalAlignment="Top" />
+            <PasswordBox Height="72" HorizontalAlignment="Left" Margin="6,164,0,0" x:Name="PasswordTextBox" VerticalAlignment="Top" Width="460" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,241,0,0" 
+        Name="UsernameTextBlock" Text="Username: (optional, email without @gmail.com)" VerticalAlignment="Top" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="6,277,0,0" 
+        x:Name="UsernameTextBox" Text="" VerticalAlignment="Top" Width="460" />
+            <CheckBox Content="Save password" Height="72" HorizontalAlignment="Left" Margin="12,355,0,0" 
+        x:Name="SavePasswordCheckBox" VerticalAlignment="Top" />
+            <Button Content="Login" Height="72" HorizontalAlignment="Left" Margin="12,433,0,0" x:Name="LoginButton" VerticalAlignment="Top" Width="160" Click="LoginButton_Click" />
+        </Grid>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
+    <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.feature.email.rest.png" Text="Mail" Click="email_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.share.rest.png" Text="Share" Click="fb_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.favs.rest.png" Text="Rate" Click="market_Click" />
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+                <shell:ApplicationBarMenuItem Text="Share this app with your friends" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

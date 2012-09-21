@@ -1,5 +1,6 @@
 # Flickr-on-Tiles
 
+This app uses [Flickr.Net API](http://flickrnet.codeplex.com/)
 
 ## Market Place Description
 
@@ -22,7 +23,6 @@ And why are you waiting? Download it and witness this app packed with features.
 
 You can find it [here](http://www.windowsphone.com/s?appid=ece71322-d6c0-42bc-92b3-04e4bc55a2d3)
 
-This app uses [Flickr.Net API](http://flickrnet.codeplex.com/)
 
 
 ## Future Work

@@ -26,3 +26,6 @@ C:\Users\Bhargav\Documents\GitHub\WindowsPhoneApps\RFCReader-Panaroma\RFCReader-
 C:\Users\Bhargav\Documents\GitHub\WindowsPhoneApps\RFCReader-Panaroma\RFCReader-Panaroma\obj\Release\RFCReader.dll
 C:\Users\Bhargav\Documents\GitHub\WindowsPhoneApps\RFCReader-Panaroma\RFCReader-Panaroma\obj\Release\RFCReader.pdb
 C:\Users\Bhargav\Documents\GitHub\WindowsPhoneApps\RFCReader-Panaroma\RFCReader-Panaroma\obj\Release\XapCacheFile.xml
+C:\Users\Bhargav\Documents\GitHub\WindowsPhoneApps\RFCReader-Panaroma\RFCReader-Panaroma\Bin\Release\Images\appbar.favs.rest.png
+C:\Users\Bhargav\Documents\GitHub\WindowsPhoneApps\RFCReader-Panaroma\RFCReader-Panaroma\Bin\Release\Images\appbar.feature.email.rest.png
+C:\Users\Bhargav\Documents\GitHub\WindowsPhoneApps\RFCReader-Panaroma\RFCReader-Panaroma\Bin\Release\Images\appbar.share.rest.png
