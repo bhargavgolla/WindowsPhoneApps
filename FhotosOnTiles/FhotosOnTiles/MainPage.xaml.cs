@@ -61,6 +61,8 @@ namespace FhotosOnTiles
             try
             {
                 _accessToken = NavigationContext.QueryString["access_token"];
+                while (NavigationService.CanGoBack)
+                    NavigationService.RemoveBackEntry();
             }
             catch (KeyNotFoundException) { }
         }

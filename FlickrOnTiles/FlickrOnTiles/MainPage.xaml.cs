@@ -14,6 +14,7 @@ using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using FlickrNet;
 using System.Windows.Media.Imaging;
+using System.Net.NetworkInformation;
 
 namespace FlickrOnTiles
 {
@@ -53,7 +54,15 @@ namespace FlickrOnTiles
         private void flickrAuthenticate_Click(object sender, RoutedEventArgs e)
         {
             // Create Flickr instance
-            NavigationService.Navigate(new Uri("/" + "Authentication" + ".xaml", UriKind.Relative));
+            if (NetworkInterface.GetIsNetworkAvailable())
+            {
+                NavigationService.Navigate(new Uri("/" + "Authentication" + ".xaml", UriKind.Relative));
+            }
+            else
+            {
+                MessageBox.Show("Active internet Connection is needed to perform this action."); 
+            }
+            
         }
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
